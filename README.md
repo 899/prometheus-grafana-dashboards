@@ -3,9 +3,11 @@
 
 prometheus grafana dashboards we'd like to share with the world.
 
- * Nsq all topics(nsq to http)
  * Cassandra client metrics
+
  * Cassandra threadpool stats
+
+ * Nsq all topics(nsq to http)
 
 
 ### Graph samples
