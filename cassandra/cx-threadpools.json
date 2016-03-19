@@ -1,1 +1,821 @@
-{"annotations":{"list":[]},"editable":true,"hideControls":true,"id":163,"links":[],"originalTitle":"cx-threadpools","refresh":false,"rows":[{"collapse":false,"editable":true,"height":"200px","panels":[{"aliasColors":{},"bars":false,"datasource":"prometheus","editable":true,"error":false,"fill":2,"grid":{"leftLogBase":1,"leftMax":null,"leftMin":null,"rightLogBase":1,"rightMax":null,"rightMin":null,"threshold1":null,"threshold1Color":"rgba(216, 200, 27, 0.27)","threshold2":null,"threshold2Color":"rgba(234, 112, 112, 0.22)"},"id":19,"isNew":true,"legend":{"alignAsTable":true,"avg":false,"current":true,"hideZero":true,"max":false,"min":false,"rightSide":false,"show":false,"total":false,"values":true},"lines":true,"linewidth":1,"links":[],"nullPointMode":"connected","percentage":false,"pointradius":1,"points":false,"renderer":"flot","seriesOverrides":[],"span":10,"stack":false,"steppedLine":false,"targets":[{"expr":"cassandra_threadpools_activetasks{threadpools=\"MutationStage\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - active","metric":"cassandra_threadpools_activetasks","refId":"B","step":21,"target":""},{"expr":"cassandra_threadpools_pendingtasks{threadpools=\"MutationStage\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - pending","metric":"cassandra_threadpools_pendingtasks","refId":"A","step":21,"target":""}],"timeFrom":null,"timeShift":null,"title":"MutationStage","tooltip":{"shared":true,"value_type":"individual"},"transparent":false,"type":"graph","x-axis":true,"y-axis":true,"y_formats":["short","short"]},{"columns":[{"text":"Current","value":"current"}],"datasource":"prometheus","editable":true,"error":false,"fontSize":"80%","id":22,"isNew":true,"links":[],"pageSize":null,"scroll":true,"showHeader":true,"sort":{"col":1,"desc":true},"span":2,"styles":[{"dateFormat":"YYYY-MM-DD HH:mm:ss","pattern":"Time","type":"date"},{"colorMode":null,"colors":["rgba(245, 54, 54, 0.9)","rgba(237, 129, 40, 0.89)","rgba(50, 172, 45, 0.97)"],"decimals":0,"pattern":"/.*/","thresholds":[],"type":"number","unit":"short"}],"targets":[{"expr":"increase(cassandra_droppedmessage_dropped{droppedmessage=\"MUTATION\"}[$rate])","intervalFactor":2,"legendFormat":"{{ instance }}","refId":"A","step":120,"target":""}],"title":"Dropped MUTATION [$rate]","transform":"timeseries_aggregations","transparent":true,"type":"table"},{"aliasColors":{},"bars":false,"datasource":"prometheus","editable":true,"error":false,"fill":2,"grid":{"leftLogBase":1,"leftMax":null,"leftMin":null,"rightLogBase":1,"rightMax":null,"rightMin":null,"threshold1":null,"threshold1Color":"rgba(216, 200, 27, 0.27)","threshold2":null,"threshold2Color":"rgba(234, 112, 112, 0.22)"},"id":20,"isNew":true,"legend":{"alignAsTable":true,"avg":false,"current":false,"max":false,"min":false,"rightSide":false,"show":false,"total":false,"values":false},"lines":true,"linewidth":1,"links":[],"nullPointMode":"connected","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"span":10,"stack":false,"steppedLine":false,"targets":[{"expr":"cassandra_threadpools_activetasks{threadpools=\"ReadStage\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - active","metric":"cassandra_threadpools_activetasks","refId":"B","step":21,"target":""},{"expr":"cassandra_threadpools_pendingtasks{threadpools=\"ReadStage\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - pending","metric":"cassandra_threadpools_pendingtasks","refId":"A","step":21,"target":""}],"timeFrom":null,"timeShift":null,"title":"ReadStage","tooltip":{"shared":true,"value_type":"individual"},"transparent":true,"type":"graph","x-axis":true,"y-axis":true,"y_formats":["short","short"]},{"columns":[{"text":"Current","value":"current"}],"datasource":"prometheus","editable":true,"error":false,"fontSize":"80%","id":23,"isNew":true,"links":[],"pageSize":0,"scroll":true,"showHeader":true,"sort":{"col":1,"desc":true},"span":2,"styles":[{"dateFormat":"YYYY-MM-DD HH:mm:ss","pattern":"Time","type":"date"},{"colorMode":null,"colors":["rgba(245, 54, 54, 0.9)","rgba(237, 129, 40, 0.89)","rgba(50, 172, 45, 0.97)"],"decimals":0,"pattern":"/.*/","thresholds":[],"type":"number","unit":"short"}],"targets":[{"expr":"increase(cassandra_droppedmessage_dropped{droppedmessage=\"READ\"}[$rate])","intervalFactor":2,"legendFormat":"{{ instance }}","refId":"A","step":120,"target":""}],"title":"Dropped READ [$rate]","transform":"timeseries_aggregations","transparent":false,"type":"table"},{"aliasColors":{},"bars":false,"datasource":"prometheus","editable":true,"error":false,"fill":2,"grid":{"leftLogBase":1,"leftMax":null,"leftMin":null,"rightLogBase":1,"rightMax":null,"rightMin":null,"threshold1":null,"threshold1Color":"rgba(216, 200, 27, 0.27)","threshold2":null,"threshold2Color":"rgba(234, 112, 112, 0.22)"},"id":21,"isNew":true,"legend":{"alignAsTable":true,"avg":false,"current":false,"max":false,"min":false,"rightSide":false,"show":false,"total":false,"values":false},"lines":true,"linewidth":1,"links":[],"nullPointMode":"connected","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"span":10,"stack":false,"steppedLine":false,"targets":[{"expr":"cassandra_threadpools_activetasks{threadpools=\"RequestResponseStage\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - active","metric":"cassandra_threadpools_activetasks","refId":"B","step":21,"target":""},{"expr":"cassandra_threadpools_pendingtasks{threadpools=\"RequestResponseStage\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - pending","metric":"cassandra_threadpools_pendingtasks","refId":"A","step":21,"target":""}],"timeFrom":null,"timeShift":null,"title":"RequestResponseStage","tooltip":{"shared":true,"value_type":"individual"},"type":"graph","x-axis":true,"y-axis":true,"y_formats":["short","short"]},{"columns":[{"text":"Current","value":"current"}],"datasource":"prometheus","editable":true,"error":false,"fontSize":"80%","id":24,"isNew":true,"links":[],"pageSize":0,"scroll":true,"showHeader":true,"sort":{"col":1,"desc":true},"span":2,"styles":[{"dateFormat":"YYYY-MM-DD HH:mm:ss","pattern":"Time","type":"date"},{"colorMode":null,"colors":["rgba(245, 54, 54, 0.9)","rgba(237, 129, 40, 0.89)","rgba(50, 172, 45, 0.97)"],"decimals":0,"pattern":"/.*/","thresholds":[],"type":"number","unit":"short"}],"targets":[{"expr":"increase(cassandra_droppedmessage_dropped{droppedmessage=\"REQUEST_RESPONSE\"}[$rate])","intervalFactor":2,"legendFormat":"{{ instance }}","refId":"A","step":120,"target":""}],"title":"Dropped REQUEST_RESPONSE [$rate]","transform":"timeseries_aggregations","transparent":true,"type":"table"},{"aliasColors":{},"bars":false,"datasource":"prometheus","editable":true,"error":false,"fill":2,"grid":{"leftLogBase":1,"leftMax":null,"leftMin":null,"rightLogBase":1,"rightMax":null,"rightMin":null,"threshold1":null,"threshold1Color":"rgba(216, 200, 27, 0.27)","threshold2":null,"threshold2Color":"rgba(234, 112, 112, 0.22)"},"id":18,"isNew":true,"legend":{"alignAsTable":true,"avg":false,"current":false,"hideZero":false,"max":false,"min":false,"rightSide":false,"show":false,"total":false,"values":false},"lines":true,"linewidth":1,"links":[],"nullPointMode":"connected","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"span":10,"stack":false,"steppedLine":false,"targets":[{"expr":"cassandra_threadpools_activetasks{threadpools=\"Native-Transport-Requests\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - active","metric":"cassandra_threadpools_activetasks","refId":"B","step":21,"target":""},{"expr":"cassandra_threadpools_pendingtasks{threadpools=\"Native-Transport-Requests\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }} - pending","metric":"cassandra_threadpools_pendingtasks","refId":"A","step":21,"target":""}],"timeFrom":null,"timeShift":null,"title":"Native-Transport-Requests","tooltip":{"shared":true,"value_type":"individual"},"transparent":true,"type":"graph","x-axis":true,"y-axis":true,"y_formats":["short","short"]},{"columns":[{"text":"Current","value":"current"}],"datasource":"prometheus","editable":true,"error":false,"fontSize":"80%","id":25,"isNew":true,"links":[],"pageSize":null,"scroll":true,"showHeader":true,"sort":{"col":1,"desc":true},"span":2,"styles":[{"dateFormat":"YYYY-MM-DD HH:mm:ss","pattern":"Time","type":"date"},{"colorMode":null,"colors":["rgba(245, 54, 54, 0.9)","rgba(237, 129, 40, 0.89)","rgba(50, 172, 45, 0.97)"],"decimals":null,"pattern":"/.*/","thresholds":[],"type":"number","unit":"short"}],"targets":[{"expr":"increase(cassandra_threadpools_totalblockedtasks{threadpools=\"Native-Transport-Requests\"}[$rate])","intervalFactor":2,"legendFormat":"{{ instance }}","metric":"cassandra_threadpools_totalblockedtasks","refId":"A","step":120,"target":""}],"title":"Blocked Native-Transport-Requests [$rate]","transform":"timeseries_aggregations","transparent":false,"type":"table"},{"aliasColors":{},"bars":false,"datasource":"prometheus","editable":true,"error":false,"fill":2,"grid":{"leftLogBase":1,"leftMax":null,"leftMin":null,"rightLogBase":1,"rightMax":null,"rightMin":null,"threshold1":null,"threshold1Color":"rgba(216, 200, 27, 0.27)","threshold2":null,"threshold2Color":"rgba(234, 112, 112, 0.22)"},"id":26,"isNew":true,"legend":{"alignAsTable":true,"avg":false,"current":true,"hideZero":false,"max":false,"min":false,"rightSide":false,"show":false,"total":false,"values":true},"lines":true,"linewidth":1,"links":[],"nullPointMode":"connected","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"span":10,"stack":false,"steppedLine":false,"targets":[{"expr":"cassandra_threadpools_pendingtasks{threadpools=\"CompactionExecutor\"}","hide":false,"intervalFactor":2,"legendFormat":"{{ instance }}","metric":"cassandra_threadpools_activetasks","refId":"B","step":21,"target":""}],"timeFrom":null,"timeShift":null,"title":"Pending CompactionExecutor","tooltip":{"shared":true,"value_type":"individual"},"type":"graph","x-axis":true,"y-axis":true,"y_formats":["short","short"]},{"columns":[{"text":"Current","value":"current"}],"datasource":"prometheus","editable":true,"error":false,"fontSize":"80%","id":27,"isNew":true,"links":[],"pageSize":null,"scroll":true,"showHeader":true,"sort":{"col":1,"desc":true},"span":2,"styles":[{"dateFormat":"YYYY-MM-DD HH:mm:ss","pattern":"Time","type":"date"},{"colorMode":null,"colors":["rgba(245, 54, 54, 0.9)","rgba(237, 129, 40, 0.89)","rgba(50, 172, 45, 0.97)"],"decimals":null,"pattern":"/.*/","thresholds":[],"type":"number","unit":"short"}],"targets":[{"expr":"cassandra_threadpools_activetasks{threadpools=\"CompactionExecutor\"}","intervalFactor":2,"legendFormat":"{{ instance }}","metric":"cassandra_threadpools_totalblockedtasks","refId":"A","step":120,"target":""}],"title":"Active CompactionExecutor","transform":"timeseries_aggregations","transparent":true,"type":"table"}],"title":"New row"}],"schemaVersion":8,"sharedCrosshair":true,"style":"dark","tags":["cx","prometheus"],"templating":{"list":[{"allFormat":"glob","current":{"tags":[],"text":"1h","value":"1h"},"datasource":null,"includeAll":false,"multi":false,"multiFormat":"glob","name":"rate","options":[{"selected":false,"text":"5m","value":"5m"},{"selected":false,"text":"10m","value":"10m"},{"selected":false,"text":"15m","value":"15m"},{"selected":false,"text":"30m","value":"30m"},{"selected":true,"text":"1h","value":"1h"},{"selected":false,"text":"2h","value":"2h"},{"selected":false,"text":"3h","value":"3h"},{"selected":false,"text":"6h","value":"6h"},{"selected":false,"text":"12h","value":"12h"},{"selected":false,"text":"24h","value":"24h"}],"query":"5m,10m,15m,30m,1h,2h,3h,6h,12h,24h","refresh":false,"type":"custom"}]},"time":{"from":"now-6h","to":"now"},"timepicker":{"now":true,"refresh_intervals":["5s","10s","30s","1m","5m","15m","30m","1h","2h","1d"],"time_options":["5m","15m","1h","6h","12h","24h","2d","7d","30d"]},"timezone":"browser","title":"cx-threadpools","version":14}
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "hideControls": true,
+  "id": 163,
+  "links": [],
+  "originalTitle": "cx-threadpools",
+  "refresh": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "200px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 19,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_threadpools_activetasks{threadpools=\"MutationStage\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - active",
+              "metric": "cassandra_threadpools_activetasks",
+              "refId": "B",
+              "step": 21,
+              "target": ""
+            },
+            {
+              "expr": "cassandra_threadpools_pendingtasks{threadpools=\"MutationStage\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - pending",
+              "metric": "cassandra_threadpools_pendingtasks",
+              "refId": "A",
+              "step": 21,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MutationStage",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "transparent": false,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fontSize": "80%",
+          "id": 22,
+          "isNew": true,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 2,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "expr": "increase(cassandra_droppedmessage_dropped{droppedmessage=\"MUTATION\"}[$rate])",
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }}",
+              "refId": "A",
+              "step": 120,
+              "target": ""
+            }
+          ],
+          "title": "Dropped MUTATION [$rate]",
+          "transform": "timeseries_aggregations",
+          "transparent": true,
+          "type": "table"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 20,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_threadpools_activetasks{threadpools=\"ReadStage\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - active",
+              "metric": "cassandra_threadpools_activetasks",
+              "refId": "B",
+              "step": 21,
+              "target": ""
+            },
+            {
+              "expr": "cassandra_threadpools_pendingtasks{threadpools=\"ReadStage\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - pending",
+              "metric": "cassandra_threadpools_pendingtasks",
+              "refId": "A",
+              "step": 21,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ReadStage",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "transparent": true,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fontSize": "80%",
+          "id": 23,
+          "isNew": true,
+          "links": [],
+          "pageSize": 0,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 2,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "expr": "increase(cassandra_droppedmessage_dropped{droppedmessage=\"READ\"}[$rate])",
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }}",
+              "refId": "A",
+              "step": 120,
+              "target": ""
+            }
+          ],
+          "title": "Dropped READ [$rate]",
+          "transform": "timeseries_aggregations",
+          "transparent": false,
+          "type": "table"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 21,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_threadpools_activetasks{threadpools=\"RequestResponseStage\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - active",
+              "metric": "cassandra_threadpools_activetasks",
+              "refId": "B",
+              "step": 21,
+              "target": ""
+            },
+            {
+              "expr": "cassandra_threadpools_pendingtasks{threadpools=\"RequestResponseStage\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - pending",
+              "metric": "cassandra_threadpools_pendingtasks",
+              "refId": "A",
+              "step": 21,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "RequestResponseStage",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fontSize": "80%",
+          "id": 24,
+          "isNew": true,
+          "links": [],
+          "pageSize": 0,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 2,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "expr": "increase(cassandra_droppedmessage_dropped{droppedmessage=\"REQUEST_RESPONSE\"}[$rate])",
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }}",
+              "refId": "A",
+              "step": 120,
+              "target": ""
+            }
+          ],
+          "title": "Dropped REQUEST_RESPONSE [$rate]",
+          "transform": "timeseries_aggregations",
+          "transparent": true,
+          "type": "table"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 18,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_threadpools_activetasks{threadpools=\"Native-Transport-Requests\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - active",
+              "metric": "cassandra_threadpools_activetasks",
+              "refId": "B",
+              "step": 21,
+              "target": ""
+            },
+            {
+              "expr": "cassandra_threadpools_pendingtasks{threadpools=\"Native-Transport-Requests\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }} - pending",
+              "metric": "cassandra_threadpools_pendingtasks",
+              "refId": "A",
+              "step": 21,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Native-Transport-Requests",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "transparent": true,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fontSize": "80%",
+          "id": 25,
+          "isNew": true,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 2,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": null,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "expr": "increase(cassandra_threadpools_totalblockedtasks{threadpools=\"Native-Transport-Requests\"}[$rate])",
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }}",
+              "metric": "cassandra_threadpools_totalblockedtasks",
+              "refId": "A",
+              "step": 120,
+              "target": ""
+            }
+          ],
+          "title": "Blocked Native-Transport-Requests [$rate]",
+          "transform": "timeseries_aggregations",
+          "transparent": false,
+          "type": "table"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 26,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cassandra_threadpools_pendingtasks{threadpools=\"CompactionExecutor\"}",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }}",
+              "metric": "cassandra_threadpools_activetasks",
+              "refId": "B",
+              "step": 21,
+              "target": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Pending CompactionExecutor",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fontSize": "80%",
+          "id": 27,
+          "isNew": true,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 2,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": null,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "expr": "cassandra_threadpools_activetasks{threadpools=\"CompactionExecutor\"}",
+              "intervalFactor": 2,
+              "legendFormat": "{{ instance }}",
+              "metric": "cassandra_threadpools_totalblockedtasks",
+              "refId": "A",
+              "step": 120,
+              "target": ""
+            }
+          ],
+          "title": "Active CompactionExecutor",
+          "transform": "timeseries_aggregations",
+          "transparent": true,
+          "type": "table"
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "schemaVersion": 8,
+  "sharedCrosshair": true,
+  "style": "dark",
+  "tags": [
+    "cx",
+    "prometheus"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "tags": [],
+          "text": "1h",
+          "value": "1h"
+        },
+        "datasource": null,
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "rate",
+        "options": [
+          {
+            "selected": false,
+            "text": "5m",
+            "value": "5m"
+          },
+          {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
+          },
+          {
+            "selected": false,
+            "text": "15m",
+            "value": "15m"
+          },
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          },
+          {
+            "selected": true,
+            "text": "1h",
+            "value": "1h"
+          },
+          {
+            "selected": false,
+            "text": "2h",
+            "value": "2h"
+          },
+          {
+            "selected": false,
+            "text": "3h",
+            "value": "3h"
+          },
+          {
+            "selected": false,
+            "text": "6h",
+            "value": "6h"
+          },
+          {
+            "selected": false,
+            "text": "12h",
+            "value": "12h"
+          },
+          {
+            "selected": false,
+            "text": "24h",
+            "value": "24h"
+          }
+        ],
+        "query": "5m,10m,15m,30m,1h,2h,3h,6h,12h,24h",
+        "refresh": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "cx-threadpools",
+  "version": 14
+}
